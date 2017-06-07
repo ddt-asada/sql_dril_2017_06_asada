@@ -1,0 +1,36 @@
+演習1-8-4
+アクセス記録テーブルからアクセス日時の新しい順に10件のログデータを取得する。
+作成日：2017年6月7日
+作成者：浅田　知嗣
+
+
+SELECT
+page_id,
+referer,
+ip_address
+
+FROM
+access_log
+
+ORDER BY
+access_date ASC
+
+LIMIT
+0, 10
+;
+
++---------+---------------------------+----------------+
+| page_id | referer                   | ip_address     |
++---------+---------------------------+----------------+
+| A0001   | http://wings.msn.to/hamu/ | 192.168.0.253  |
+| A0001   | http://wings.msn.to/hamu/ | 192.168.1.223  |
+| B0001   | http://wings.msn.to/hamu/ | 192.168.21.18  |
+| A0001   | http://wings.msn.to/hamu/ | 192.168.115.25 |
+| A0001   | http://wings.msn.to/hamu/ | 192.168.29.208 |
+| A0001   | http://wings.msn.to/hamu/ | 192.168.3.254  |
+| A0001   | http://wings.msn.to/neko/ | 192.168.42.217 |
+| B0001   | http://wings.msn.to/inu/  | 192.168.81.112 |
+| B0001   | http://wings.msn.to/hamu/ | 192.168.165.27 |
+| B0002   | http://wings.msn.to/neko/ | 192.168.29.207 |
++---------+---------------------------+----------------+
+10 rows in set (0.00 sec)
