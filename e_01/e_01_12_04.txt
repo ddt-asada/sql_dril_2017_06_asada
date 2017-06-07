@@ -1,0 +1,55 @@
+演習1-12-4
+書籍情報テーブルから出版社、分類IDごとに登録数を求め、登録数が3冊未満の情報だけを取り出す。
+作成日：2017年6月7日
+作成者：浅田　知嗣
+
+SELECT
+publish AS 出版社,
+COUNT(publish) AS 登録数
+
+FROM
+books
+
+GROUP BY
+publish
+
+HAVING
+COUNT(publish) <= 3
+;
+
++--------------+--------+
+| 出版社       | 登録数 |
++--------------+--------+
+| 秀和システム |      2 |
+| 日経BP       |      3 |
+| 翔泳社       |      2 |
++--------------+--------+
+3 rows in set (0.00 sec)
+
+
+SELECT
+category_id AS 分類ID,
+COUNT(category_id) AS 登録数
+
+FROM
+books
+
+GROUP BY
+category_id
+
+HAVING
+COUNT(category_id) <= 3
+;
+
++--------+--------+
+| 分類ID | 登録数 |
++--------+--------+
+| A9999  |      1 |
+| H9999  |      1 |
+| J4444  |      1 |
+| P1111  |      3 |
+| S2222  |      3 |
+| X3333  |      2 |
+| Z9999  |      3 |
++--------+--------+
+7 rows in set (0.00 sec)
