@@ -1,0 +1,28 @@
+演習2-2-2
+社員テーブルと所属部署テーブルを消す郷士、所属社員が一人もいない「幽霊」部署を洗い出す。
+作成日：2017年6月8日
+作成者：浅田　知嗣
+
+SELECT
+d.depart_id,
+d.depart_name
+
+FROM
+depart AS d
+
+LEFT JOIN
+employee AS e
+
+ON
+d.depart_id = e.depart_id
+
+WHERE
+e.depart_id is NULL
+;
+
++-----------+-------------+
+| depart_id | depart_name |
++-----------+-------------+
+| E02       | 第二営業部  |
++-----------+-------------+
+1 row in set (0.00 sec)
