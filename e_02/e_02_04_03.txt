@@ -1,0 +1,55 @@
+演習2-4-3
+注文書テーブルと注文明細テーブル、ユーザテーブル、商品テーブルを結合し、
+未納の注文について、発注日、注文コード、商品コードを昇順に出力。
+作成日：2017年6月8日
+作成者：浅田　知嗣
+
+SELECT
+om.order_date AS 発注日,
+od.po_id AS 注文コード,
+CONCAT(us.l_name, us.f_name) AS 利用者氏名,
+p.p_name AS 商品名,
+p.price AS 商品単価,
+od.quantity AS 購入数
+
+FROM
+(
+order_main AS om
+  
+INNER JOIN
+ (
+  order_desc AS od
+
+  INNER JOIN
+  product AS p
+
+  ON
+  od.p_id = p.p_id
+  )
+
+ON
+om.po_id = od. po_id
+)
+
+INNER JOIN
+usr AS us
+
+ON
+om.user_id = us.user_id
+
+WHERE
+om.delivery_date IS NULL
+
+ORDER BY
+om.order_date ASC,
+om.po_id ASC,
+od.p_id ASC
+;
+
++------------+------------+------------+--------------+----------+--------+
+| 発注日     | 注文コード | 利用者氏名 | 商品名       | 商品単価 | 購入数 |
++------------+------------+------------+--------------+----------+--------+
+| 2012-12-22 |         19 | 森本絵里   | 赤ボールペン |      100 |    100 |
+| 2012-12-25 |         20 | 西島文子   | 電卓         |      600 |     10 |
++------------+------------+------------+--------------+----------+--------+
+2 rows in set (0.00 sec)
