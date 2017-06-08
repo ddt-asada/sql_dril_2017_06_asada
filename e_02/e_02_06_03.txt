@@ -1,0 +1,38 @@
+演習2-6-3
+ユーザテーブルとアンケート回答テーブルからそれぞれ千葉県に住んでいる人間だけを取り出す。
+作成日：2017年6月8日
+作成者：浅田　知嗣
+
+SELECT
+CONCAT(u.l_name_kana, f_name_kana) AS 氏名
+
+FROM
+usr AS u
+
+WHERE
+u.prefecture = '千葉県'
+
+UNION
+
+SELECT
+q.name_kana
+
+FROM
+quest AS q
+
+WHERE
+q.prefecture = '千葉県'
+
+ORDER BY
+1 DESC
+;
+
+       氏名
+------------------
+ ヤグチアユミ
+ ムライサチコ
+ ネギシアユミ
+ クボタマモル
+ イノウエイチロウ
+ アリキマモル
+(6 行)
