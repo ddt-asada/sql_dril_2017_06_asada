@@ -1,0 +1,29 @@
+演習4-1-4
+書籍情報テーブルを新規に作成する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+CREATE TABLE
+books
+(
+isbn CHAR(17),
+title VARCHAR(255),
+price INT,
+publish VARCHAR(30),
+publish_date DATE,
+category_id CHAR(5),
+PRIMARY KEY(isbn)
+)
+;
+
+             テーブル "public.books"
+      列      |           型           |  修飾語
+--------------+------------------------+----------
+ isbn         | character(17)          | not null
+ title        | character varying(255) |
+ price        | integer                |
+ publish      | character varying(30)  |
+ publish_date | date                   |
+ category_id  | character(5)           |
+インデックス:
+    "books_pkey" PRIMARY KEY, btree (isbn)
