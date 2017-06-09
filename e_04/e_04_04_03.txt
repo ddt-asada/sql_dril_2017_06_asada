@@ -1,0 +1,21 @@
+演習4-4-3
+著者情報テーブルの著者名の定義を変更する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+ALTER TABLE
+author
+
+MODIFY
+name VARCHAR(100) DEFAULT ''
+;
+
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| author_id | char(5)      | NO   | PRI |         |       |
+| name      | varchar(100) | YES  |     |         |       |
+| name_kana | varchar(100) | YES  |     | NULL    |       |
+| birth     | date         | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
