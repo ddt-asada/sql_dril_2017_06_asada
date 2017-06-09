@@ -1,0 +1,23 @@
+演習4-1-1
+著者情報テーブルを新規に作成する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+CREATE TABLE
+author
+(
+aouthor_id CHAR(5) PRIMARY KEY,
+name VARCHAR(30),
+name_kana VARCHAR(100),
+birth DATE
+)
+;
+
+     列     |           型           |  修飾語
+------------+------------------------+----------
+ aouthor_id | character(5)           | not null
+ name       | character varying(30)  |
+ name_kana  | character varying(100) |
+ birth      | date                   |
+インデックス:
+    "author_pkey" PRIMARY KEY, btree (aouthor_id)
