@@ -1,0 +1,27 @@
+演習4-1-5
+貸出記録テーブルを新規に作成する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+
+CREATE TABLE
+rental
+(
+id serial PRIMARY KEY,
+user_id CHAR(7),
+isbn CHAR(13),
+rental_date DATE,
+returned SMALLINT DEFAULT 0
+)
+;
+
+                             テーブル "public.rental"
+     列      |      型       |                       修飾語
+-------------+---------------+-----------------------------------------------------
+ id          | integer       | not null default nextval('rental_id_seq'::regclass)
+ user_id     | character(7)  |
+ isbn        | character(13) |
+ rental_date | date          |
+ returned    | smallint      | default 0
+インデックス:
+    "rental_pkey" PRIMARY KEY, btree (id)
