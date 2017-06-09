@@ -1,0 +1,29 @@
+演習4-3-2
+月間売上テーブルを主キーのない状態で生成し、後から主キーを追加。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+CREATE TABLE
+salesv2
+(
+s_id CHAR(5) NOT NULL,
+s_date DATE NOT NULL,
+s_value INT DEFAULT 0
+)
+;
+
+ALTER TABLE
+salesv2
+
+ADD
+PRIMARY KEY(s_id)
+;
+
+     テーブル "public.salesv2"
+   列    |      型      |  修飾語
+---------+--------------+-----------
+ s_id    | character(5) | not null
+ s_date  | date         | not null
+ s_value | integer      | default 0
+インデックス:
+    "salesv2_pkey" PRIMARY KEY, btree (s_id)
