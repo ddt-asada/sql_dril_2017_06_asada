@@ -1,0 +1,23 @@
+演習4-1-3
+月間売上テーブルを新規に作成する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+CREATE TABLE
+sales
+(
+s_id CHAR(17) NOT NULL,
+s_date DATE NOT NULL,
+s_value INT,
+PRIMARY KEY (s_id, s_date)
+)
+;
+
+      テーブル "public.sales"
+   列    |      型       |  修飾語
+---------+---------------+----------
+ s_id    | character(17) | not null
+ s_date  | date          | not null
+ s_value | integer       |
+インデックス:
+    "sales_pkey" PRIMARY KEY, btree (s_id, s_date)
