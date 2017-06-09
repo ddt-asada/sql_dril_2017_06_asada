@@ -1,0 +1,23 @@
+演習4-1-2
+注文明細テーブルを新規に作成する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+CREATE TABLE
+order_desc
+(
+po_id INT NOT NULL,
+p_id CHAR(10) NOT NULL,
+quantity INT,
+PRIMARY KEY(po_id, p_id)
+)
+;
+
+    テーブル "public.order_desc"
+    列    |      型       |  修飾語
+----------+---------------+----------
+ po_id    | integer       | not null
+ p_id     | character(10) | not null
+ quantity | integer       |
+インデックス:
+    "order_desc_pkey" PRIMARY KEY, btree (po_id, p_id)
