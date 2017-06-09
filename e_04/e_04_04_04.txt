@@ -1,0 +1,22 @@
+演習4-4-4
+アクセス記録テーブルに対して、referfer列の定義を変更する。
+作成日：2017年6月9日
+作成者：浅田　知嗣
+
+ALTER TABLE
+access_log
+
+MODIFY
+referer VARCHAR(200) NULL
+;
+
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| log_id      | int(11)      | NO   | PRI | NULL    | auto_increment |
+| page_id     | char(5)      | YES  |     | NULL    |                |
+| referer     | varchar(200) | YES  |     | NULL    |                |
+| ip_address  | char(15)     | YES  |     | NULL    |                |
+| access_date | datetime     | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.02 sec)
